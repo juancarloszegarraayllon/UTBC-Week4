@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Clicked</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Click to Eat Sandwich</h1>
+  <h3 id="pbj">Peanut Butter Jelly</h3>
+  <h4 id="pbjcount"></h4>
+  <hr>
+  <h3 id="grilledcheese">Grilled Cheese</h3>
+  <h4 id="gccount"></h4>
+  <hr>
+  <h3 id="roastbeef">Roast Beef</h3>
+  <h4 id="rbcount"></h4>
+
+  <script type="text/javascript">
+
+    // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
+    // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
+    // It's useful to become familiar with now.
+
+    $(document).ready(function() {
+
+      // VARIABLES
+      // ====================================================================
+      // Here we create variables for tracking the number of sandwiches eaten
+      // ...
+      var pbJelly=0;
+      var grilledCheese=0;
+      var roastBeef=0;
+
+      // ...
+
+      // FUNCTIONS
+      // ====================================================================
+      // Here we create various on "click" functions which capture the clicks
+      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+      // ...
+      var pbjDiv = $("<div>");
+
+      $("#pbj").on("click", function() {
+        alert("Selected Peanut Butter Jelly Sandwich");
+        pbJelly += 1;
+      
+        pbjDiv.text(pbJelly);
+        $("#pbjcount").append(pbjDiv);
+      });
+      // ... below will log on click and created new div each time
+      // $("#pbj").on("click", function() {
+      //   alert("Selected Peanut Butter Jelly Sandwich");
+      //   pbJelly += 1;
+      //   var newDiv = $("<div>");
+      //   newDiv.text(pbJelly);
+      //   $("#pbj").append(newDiv);
+      // });
+
+      var gcDiv = $("<div>");
+
+      $("#grilledcheese").on("click", function() {
+        alert("Selected Grilled Cheese Sandwich");
+        grilledCheese += 1;
+      
+        gcDiv.text(grilledCheese);
+        $("#gccount").append(gcDiv);
+      });      
+
+      var rbDiv = $("<div>");
+
+      $("#roastbeef").on("click", function() {
+        alert("Selected Roast Beef Sandwich");
+        roastBeef += 1;
+      
+        rbDiv.text(roastBeef);
+        $("#rbcount").append(rbDiv);
+      });
+    });
+
+</script>
+
+</body>
+
+</html>
